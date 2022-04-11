@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Calcmat</class>
+ <widget class="QMainWindow" name="Calcmat">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>540</width>
+    <height>455</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Calcmat</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+background-color:  #D3D3D3
+}</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>231</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:  black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Wprowadź macierz:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>231</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:  black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Wynik:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>190</y>
+      <width>231</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:  black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Wybierz działanie:</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="Display">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>40</y>
+      <width>241</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextBrowser {
+background-color:  #F0F8FF;
+color: black;
+border: 10px gray
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>190</y>
+      <width>231</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:  black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Obliczenia:</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="Calculates">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>220</y>
+      <width>241</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit {
+background-color:  #F0F8FF;
+color: black;
+border: 10px gray
+}</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>221</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="1" column="1">
+      <widget class="QPushButton" name="MulX">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>A * x</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="Det">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>Det(A)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="DopA">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>A^D</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="Inverse">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>A^-1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="Transp">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>A^T</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="Sub">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>A - B</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="MulMat">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>A * B</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="Add">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>A + B</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="Result">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #C0C0C0;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}
+QPushButton:pressed {
+background-color: #A9A9A9;
+border: 1px solid gray;
+padding: 5px;
+color: black
+}</string>
+       </property>
+       <property name="text">
+        <string>=</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="Clear">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #B22222;
+border: 1px solid gray;
+padding: 5px;
+color: white
+}
+QPushButton:pressed {
+background-color: #DC143C;
+border: 1px solid gray;
+padding: 5px;
+color: white
+}</string>
+       </property>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>221</width>
+      <height>136</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QLineEdit" name="e0x0">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="e0x1">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="e0x2">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="e0x3">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="e1x0">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="e1x1">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black;
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="e1x2">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="e1x3">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLineEdit" name="e2x0">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="e2x1">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="e2x2">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="e2x3">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="e3x0">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="e3x1">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="e3x2">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLineEdit" name="e3x3">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+background-color: #F0F8FF;
+border: 1px;
+color: black
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>540</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
