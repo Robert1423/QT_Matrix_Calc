@@ -29,6 +29,15 @@ protected:
     Ui::Calcmat *ui;
 private slots:
     void on_Result_released();
+    void on_Clear_released();
+    void on_Add_released();
+    void on_Sub_released();
+    void on_MulMat_released();
+    void on_MulX_released();
+    void on_Transp_released();
+    void on_Det_released();
+    void on_DopA_released();
+    void on_Inverse_released();
 };
 
 #endif // CALCMAT_H
