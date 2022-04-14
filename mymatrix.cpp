@@ -228,6 +228,7 @@ vector<vector<double>> MyMatrix::Admat(Calcmat * cUi)
     if (row==col)
     {
         result="";
+        calcValue="";
         vector<vector<double>> ad=mat;
         vector<vector<double>> res;
         for (int i=0; i<row; i++)
@@ -241,7 +242,7 @@ vector<vector<double>> MyMatrix::Admat(Calcmat * cUi)
                 result+=QString::number(m*d)+"\t";
                 temp.push_back(m*d);
                 calcValue+="("+QString::number(-1)+")^("+QString::number(i+1)+
-                        QString::number(j+1)+") * "+QString::number(d);
+                        QString::number(j+1)+") * "+QString::number(d)+"\n";
             }
             result+="\n";
             res.push_back(temp);

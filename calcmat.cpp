@@ -17,6 +17,15 @@ Calcmat::Calcmat(QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(QSize(615, 440));
+    //połączenie przycisków ze slotem
+    connect(ui->Add,SIGNAL(released()),this,SLOT(Pressed()));
+    connect(ui->Sub,SIGNAL(released()),this,SLOT(Pressed()));
+    connect(ui->MulMat,SIGNAL(released()),this,SLOT(Pressed()));
+    connect(ui->MulX,SIGNAL(released()),this,SLOT(Pressed()));
+    connect(ui->Transp,SIGNAL(released()),this,SLOT(Pressed()));
+    connect(ui->Det,SIGNAL(released()),this,SLOT(Pressed()));
+    connect(ui->DopA,SIGNAL(released()),this,SLOT(Pressed()));
+    connect(ui->Inverse,SIGNAL(released()),this,SLOT(Pressed()));
 }
 
 Calcmat::~Calcmat()
@@ -131,75 +140,29 @@ void Calcmat::on_Clear_released()
 
 //Po wcisńieciu przycisku program sprawdza stan tablicy elems, czy ma wczytane wskaźniki na QLineEdit's i jeżeli jest puty wypełnia go
 //Następnie sczytuje wartości z obiektów QLineEdit do macierzy, czyści je i ustawia wartość bool przypisaną do przycisku na true
-//Można przerobić te sloty na jedną funkcje.
-void Calcmat::on_Add_released() //Co ma robić po wciśnięciu A+B
+void Calcmat::Pressed()
 {
+    addTrig=subTrig=mulTrig=skalTrig=detTrig=transpTrig=adTrig=inverseTrig = false;
     checkElems(elems,this);
     A.Fill(elems,this);
     for (int i=0; i<16; i++)
         elems[i]->setText("");
-    addTrig=true;
-}
-
-void Calcmat::on_Sub_released() //Co ma robić po wciśnięciu A-B
-{
-    checkElems(elems,this);
-    A.Fill(elems,this);
-    for (int i=0; i<16; i++)
-        elems[i]->setText("");
-    subTrig=true;
-}
-
-void Calcmat::on_MulMat_released() //Co ma robić po wciśnięciu A*B
-{
-    checkElems(elems,this);
-    A.Fill(elems,this);
-    for (int i=0; i<16; i++)
-        elems[i]->setText("");
-    mulTrig=true;
-}
-
-void Calcmat::on_MulX_released() //Co ma robić po wciśnięciu A*x
-{
-    checkElems(elems,this);
-    A.Fill(elems,this);
-    for (int i=0; i<16; i++)
-        elems[i]->setText("");
-    skalTrig=true;
-}
-
-void Calcmat::on_Transp_released() //Co ma robić po wciśnięciu A^T
-{
-    checkElems(elems,this);
-    A.Fill(elems,this);
-    for (int i=0; i<16; i++)
-        elems[i]->setText("");
-    transpTrig=true;
-}
-
-void Calcmat::on_Det_released() //Co ma robić po wciśnięciu det(A)
-{
-    checkElems(elems,this);
-    A.Fill(elems,this);
-    for (int i=0; i<16; i++)
-        elems[i]->setText("");
-    detTrig=true;
-}
-
-void Calcmat::on_DopA_released() //Co ma robić po wciśnięciu A^D
-{
-    checkElems(elems,this);
-    A.Fill(elems,this);
-    for (int i=0; i<16; i++)
-        elems[i]->setText("");
-    adTrig=true;
-}
-
-void Calcmat::on_Inverse_released() //Co ma robić po wciśnięciu A^-1
-{
-    checkElems(elems,this);
-    A.Fill(elems,this);
-    for (int i=0; i<16; i++)
-        elems[i]->setText("");
-    inverseTrig=true;
+    QPushButton *button = (QPushButton *)sender();
+    QString butVal = button->text();
+    if(QString::compare(butVal,"A + B",Qt::CaseInsensitive)==0)
+        addTrig=true;
+    else if(QString::compare(butVal,"A - B",Qt::CaseInsensitive)==0)
+        subTrig=true;
+    else if(QString::compare(butVal,"A * B",Qt::CaseInsensitive)==0)
+        mulTrig=true;
+    else if(QString::compare(butVal,"A * x",Qt::CaseInsensitive)==0)
+        skalTrig=true;
+    else if(QString::compare(butVal,"Det(A)",Qt::CaseInsensitive)==0)
+        detTrig=true;
+    else if(QString::compare(butVal,"A^T",Qt::CaseInsensitive)==0)
+        transpTrig=true;
+    else if(QString::compare(butVal,"A^D",Qt::CaseInsensitive)==0)
+        adTrig=true;
+    else if(QString::compare(butVal,"A^-1",Qt::CaseInsensitive)==0)
+        inverseTrig=true;
 }
